@@ -1,0 +1,159 @@
+\documentclass[a4paper,11pt,DIV=calc,german]{scrartcl}
+%\documentclass[DIV=calc,german]{scrartcl}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+%\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{enumitem}
+\usepackage[svgnames,table,hyperref]{xcolor}
+\usepackage{listings}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{threeparttable}
+\usepackage{color}															 
+% für Farben im allgemeinen
+\usepackage{colortbl}	
+\usepackage{eurosym}
+%\usepackage{subfigure}
+%\usepackage{cite}
+\usepackage[printonlyused]{acronym}
+\usepackage{sidecap}
+%\usepackage{SIunits}
+\usepackage{tikz}
+%\usepackage{ulem}
+\usepackage{fancybox}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{mathpazo}
+\usepackage{lmodern}
+\usepackage{threeparttable}
+%\usepackage{slashbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{acronym}
+\usepackage{csquotes}
+
+
+\usepackage[
+backend=biber,
+style=apa, %Zitationsstil
+maxcitenames=3,	% mindestens 3 Namen ausgeben bevor et. al. kommt
+maxbibnames=999,
+date=iso,
+seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
+urldate=iso,
+dashed=false,
+dateera=astronomical,
+autocite=inline,
+useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
+mincrossrefs = 1
+]{biblatex}%iso dateformat für YYYY-MM-DD
+
+\numberwithin{figure}{section} %Zähler der Figures nach Kapitel, Weglassen dieser Zeile: dokumentenweite Zählung
+\numberwithin{equation}{section} %Zählweise der Gleichungen
+\usepackage{stmaryrd}
+\addbibresource{Abschlussarbeit.bib}
+
+
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+
+\tikzset{
+>=stealth',
+  punktchain/.style={
+    rectangle, 
+    rounded corners, 
+    % fill=black!10,
+    draw=black, very thick,
+    text width=10em, 
+    minimum height=3em, 
+    text centered, 
+    on chain},
+  line/.style={draw, thick, <-},
+  element/.style={
+    tape,
+    top color=white,
+    bottom color=blue!50!black!60!,
+    minimum width=8em,
+    draw=blue!40!black!90, very thick,
+    text width=10em, 
+    minimum height=3.5em, 
+    text centered, 
+    on chain},
+  every join/.style={->, thick,shorten >=1pt},
+  decoration={brace},
+  tuborg/.style={decorate},
+  tubnode/.style={midway, right=2pt},
+}
+
+\lstloadlanguages{[LaTeX]TeX}
+\lstset{%
+  basicstyle=\footnotesize\ttfamily,
+  extendedchars=true,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=6pt,
+  frame=single,
+  frameround=tttt,
+  captionpos=b,
+  breaklines=true,
+  aboveskip=2ex,
+  belowskip=1ex,
+  backgroundcolor=\color{LightYellow},
+  commentstyle=\color{DarkRed},
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  language={[LaTeX]TeX}
+}
+\hypersetup{%
+  colorlinks=true,
+  citecolor=black,
+  linkcolor=black,
+  %bookmarks=true,
+  bookmarksnumbered=true,
+  pdfauthor={\studentname},
+  pdfcreator={Latex},
+  pdfkeywords={Abschlussarbeit},
+  urlcolor=black,
+  plainpages=false,
+  breaklinks=true,
+  pdftitle={Abschlussarbeit}
+}
+\setlist[description]{leftmargin=1cm, style=sameline}
+
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+
+% Setze die Tiefe des Inhaltsverzeichnis auf 4 Ebenen
+\makeatletter
+%same as \subsubsection but level 4
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+% number \paragraph
+\setcounter{secnumdepth}{4}
+\makeatother
+%-----------------------------------
+
+% Mehrere Fussnoten nacheinander mit Komma separiert
+\usepackage[hang,multiple]{footmisc}
+\setlength{\footnotemargin}{1em}
+
+% Verhindert, dass nur eine Zeile auf der nächsten Seite steht
+\setlength{\marginparwidth}{2cm}
+\usepackage[all]{nowidow}
+\urlstyle{same}%gleiche Schriftart für Link und Text
+\hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblack, citecolor=darkblack, menucolor=darkblack, urlcolor=darkblack, linktoc=all, bookmarksnumbered=false, pdfpagemode=UseOutlines, pdftoolbar=true}
